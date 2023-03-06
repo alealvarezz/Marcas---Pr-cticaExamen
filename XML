@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+<!DOCTYPE aplicacion [
+<!ELEMENT aplicacion ( chat ) >
+<!ELEMENT chat ( mensajes ) >
+<!ELEMENT mensajes ( mensaje )+ >
+<!ELEMENT mensaje ( contenido, id_emisor, id_receptor, fecha, entregado ) >
+<!ELEMENT contenido (#PCDATA) >
+<!ELEMENT id_emisor (#PCDATA) >
+<!ELEMENT id_receptor (#PCDATA) >
+<!ELEMENT fecha (#PCDATA) >
+<!ELEMENT entregado ( #PCDATA ) >
+]>
+
+
+<aplicacion>
+    <chat>
+        <mensajes>
+            <mensaje>
+                <contenido>Lorem ipsum dolor sit amet consectetur adipiscing elit conubia et imperdiet</contenido>
+                <id_emisor>1001</id_emisor>
+                <id_receptor>2001</id_receptor>
+                <fecha>2023-03-06</fecha>
+                <entregado>Si</entregado>
+            </mensaje>
+            <mensaje>
+                <contenido>Pretium gravida consequat platea a aliquet faucibus dis purus</contenido>
+                <id_emisor>2001</id_emisor>
+                <id_receptor>1001</id_receptor>
+                <fecha>2023-01-02</fecha>
+                <entregado>Si</entregado>
+            </mensaje>
+            <mensaje>
+                <contenido>Luctus tristique congue in viverra libero facilisi nec feugiat</contenido>
+                <id_emisor>1001</id_emisor>
+                <id_receptor>2001</id_receptor>
+                <fecha>2022-12-23</fecha>
+                <entregado>No</entregado>
+            </mensaje>
+            <mensaje>
+                <contenido>Sollicitudin sapien cubilia lacinia nisl potenti odio dui ac</contenido>
+                <id_emisor>1001</id_emisor>
+                <id_receptor>2001</id_receptor>
+                <fecha>2022-02-22</fecha>
+                <entregado>Si</entregado>
+            </mensaje>
+        </mensajes>
+    </chat>
+</aplicacion>
