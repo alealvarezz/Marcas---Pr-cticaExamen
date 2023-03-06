@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<!--
+    Document   : PracticaExamen2.xsl
+    Created on : 6 de marzo de 2023, 12:51
+    Author     : aleja
+    Description:
+        Purpose of transformation follows.
+-->
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+    <xsl:output method="html"/>
+
+    <!-- TODO customize transformation rules 
+         syntax recommendation http://www.w3.org/TR/xslt 
+    -->
+    <xsl:template match="/">
+        <html>
+            <head>
+                <title>PracticaExamen2.xsl</title>
+                <style>
+                                    li e {
+                    font-weight: bold;    
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Listado de usuarios</h1>
+                <xsl:for-each select="/informacion/usuarios/usuario">
+                    <ol>
+                        <li><e>ID: </e><xsl:value-of select="id" /></li>
+                        <ul>
+                            <li><e>Nombre: </e><xsl:value-of select="nombre" /></li>
+                            <li><e>Apellido: </e><xsl:value-of select="apellidos" /></li>
+                            <li><e>Actividades: </e></li>
+                            <xsl:for-each select="actividades/actividad">
+                                <ul>
+                                    <li><e>ID Actividad: </e><xsl:value-of select="id_actividad" /></li>
+                                    <li><e>Nombre Actividad: </e><xsl:value-of select="nombre_actividad" /></li>
+                                    <li><e>Categoria: </e><xsl:value-of select="categoria" /></li>
+                                    <li><e>Tiempo: </e><xsl:value-of select="tiempo" /></li>
+                                    <br></br>
+                                </ul>
+                            </xsl:for-each>
+                        </ul>
+                    </ol>
+                </xsl:for-each>
+            </body>
+        </html>
+    </xsl:template>
+
+</xsl:stylesheet>
