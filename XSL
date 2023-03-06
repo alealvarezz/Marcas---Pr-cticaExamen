@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+
+<!--
+    Document   : PracticaExamen.xsl
+    Created on : 6 de marzo de 2023, 11:00
+    Author     : aleja
+    Description:
+        Purpose of transformation follows.
+-->
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+    <xsl:output method="html"/>
+
+    <!-- TODO customize transformation rules 
+         syntax recommendation http://www.w3.org/TR/xslt 
+    -->
+    <xsl:template match="/">
+        <html>
+            <head>
+                <title>PracticaExamen.xsl</title>
+                <style>
+                    table{
+                    border-collapse: collapse;
+                    border: solid;
+                    }
+                    table tr th{
+                    background-color: black;
+                    color: white;
+                    padding: 1em;
+                    border: solid;
+                    border-color: black;
+                    }
+                    table tr td{
+                    padding: 1em;
+                    border: solid;
+                    }
+                    body{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    }
+                    h1{
+                    margin: 2cm;
+                    }
+                </style>
+            </head>
+            <body>
+                <h1>Listado de mensajes</h1>
+                <table>
+                    <tr>
+                        <th>Contenido</th>
+                        <th>ID emisor</th>
+                        <th>ID receptor</th>
+                        <th>Fecha</th>
+                        <th>Entregado</th>
+                    </tr>
+                    <xsl:for-each select="/aplicacion/chat/mensajes/mensaje">
+                        <xsl:sort select="fecha" order="ascending" data-type="text" />
+                        <tr>
+                            <xsl:choose>
+                                <xsl:when test="entregado='No'">
+                                    <td style="background-color: #FFFDAE;">
+                                        <xsl:value-of select="contenido" />
+                                    </td>
+                                    <td style="background-color: #FFFDAE;">
+                                        <xsl:value-of select="id_emisor" />
+                                    </td>
+                                    <td style="background-color: #FFFDAE;">
+                                        <xsl:value-of select="id_receptor" />
+                                    </td>
+                                    <td style="background-color: #FFFDAE;">
+                                        <xsl:value-of select="fecha" />
+                                    </td>
+                                    <td style="background-color: #FFFDAE;">
+                                        <xsl:value-of select="entregado" />
+                                    </td>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <td>
+                                        <xsl:value-of select="contenido" />
+                                    </td>
+                                    <td>
+                                        <xsl:value-of select="id_emisor" />
+                                    </td>
+                                    <td>
+                                        <xsl:value-of select="id_receptor" />
+                                    </td>
+                                    <td>
+                                        <xsl:value-of select="fecha" />
+                                    </td>
+                                    <td>
+                                        <xsl:value-of select="entregado" />
+                                    </td>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </tr>
+                    </xsl:for-each>
+                </table>
+            </body>
+        </html>
+    </xsl:template>
+</xsl:stylesheet>
