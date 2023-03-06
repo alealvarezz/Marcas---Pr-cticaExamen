@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+<!DOCTYPE informacion [
+<!ELEMENT informacion ( usuarios ) >
+<!ELEMENT usuarios (usuario)* >
+<!ELEMENT usuario ( id, nombre, apellidos, actividades ) >
+<!ELEMENT id (#PCDATA) >
+<!ELEMENT nombre (#PCDATA) >
+<!ELEMENT apellidos (#PCDATA) >
+<!ELEMENT actividades (actividad)* >
+<!ELEMENT actividad ( id_actividad, nombre_actividad, categoria, tiempo ) >
+<!ELEMENT id_actividad (#PCDATA) >
+<!ELEMENT nombre_actividad (#PCDATA) >
+<!ELEMENT categoria (#PCDATA) >
+<!ELEMENT tiempo (#PCDATA) >
+]>
+
+
+<informacion>
+    <usuarios>
+        <usuario>
+            <id>1001</id>
+            <nombre>Ale</nombre>
+            <apellidos>Alvarez</apellidos>
+            <actividades>
+                <actividad>
+                    <id_actividad>984</id_actividad>
+                    <nombre_actividad>Hípica</nombre_actividad>
+                    <categoria>Exterior</categoria>
+                    <tiempo>3 horas</tiempo>
+                </actividad>
+                <actividad>
+                    <id_actividad>223</id_actividad>
+                    <nombre_actividad>Cocina</nombre_actividad>
+                    <categoria>Interior</categoria>
+                    <tiempo>2 horas</tiempo>
+                </actividad>
+                <actividad>
+                    <id_actividad>456</id_actividad>
+                    <nombre_actividad>Natacion</nombre_actividad>
+                    <categoria>Interior</categoria>
+                    <tiempo>4 horas</tiempo>
+                </actividad>
+            </actividades>
+        </usuario>
+        <usuario>
+            <id>2001</id>
+            <nombre>Swan</nombre>
+            <apellidos>Belmana</apellidos>
+            <actividades>
+                <actividad>
+                    <id_actividad>432</id_actividad>
+                    <nombre_actividad>Baile</nombre_actividad>
+                    <categoria>Interior</categoria>
+                    <tiempo>6 horas</tiempo>
+                </actividad>
+                <actividad>
+                    <id_actividad>789</id_actividad>
+                    <nombre_actividad>Crossfit</nombre_actividad>
+                    <categoria>Interior</categoria>
+                    <tiempo>3 horas</tiempo>
+                </actividad>
+                <actividad>
+                    <id_actividad>992</id_actividad>
+                    <nombre_actividad>Futbol</nombre_actividad>
+                    <categoria>Exterior</categoria>
+                    <tiempo>4 horas</tiempo>
+                </actividad>
+            </actividades>
+        </usuario>
+    </usuarios>
+    
+</informacion>
